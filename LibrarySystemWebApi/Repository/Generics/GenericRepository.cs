@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibrarySystemWebApi.Repository.Generics
@@ -10,19 +12,90 @@ namespace LibrarySystemWebApi.Repository.Generics
     {
         protected abstract IDbContextFactory<TContext> DbContextFactory { get; }
 
-        public TEntity GetFirst<TEntity>(Expression<Func<TEntity, bool>> expression) where TEntity : class, new()
+        private IQueryable<TEntity> QueryBuilder<TEntity>(TContext context,
+            Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new()
+        {
+            IQueryable<TEntity> query = context.Set<TEntity>();
+
+            if (expression != null)
+            {
+                query = query.Where(expression);
+            }
+
+            return query;
+        }
+
+        public async Task<TEntity> GetFirstAsync<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new()
         {
             using (var ctx = DbContextFactory.CreateContext())
             {
-                throw new NotImplementedException();
+                return await QueryBuilder(ctx, expression).FirstOrDefaultAsync();
             }
         }
 
-        public List<TEntity> GetList<TEntity>(Expression<Func<TEntity, bool>> expression) where TEntity : class, new()
+        public TEntity GetFirst<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new()
         {
             using (var ctx = DbContextFactory.CreateContext())
             {
-                throw new NotImplementedException();
+                return QueryBuilder(ctx, expression).FirstOrDefault();
+            }
+        }
+
+        public List<TEntity> GetList<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new()
+        {
+            using (var ctx = DbContextFactory.CreateContext())
+            {
+                return QueryBuilder(ctx, expression).ToList();
+            }
+        }
+
+        public async Task<List<TEntity>> GetListAsync<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new()
+        {
+            using (var ctx = DbContextFactory.CreateContext())
+            {
+                return await QueryBuilder(ctx, expression).ToListAsync();
+            }
+        }
+
+        public int Update<TEntity>(TEntity entity) where TEntity : class, new()
+        {
+            using (var ctx = DbContextFactory.CreateContext())
+            {
+                var set = ctx.Set<TEntity>();
+                set.Attach(entity);
+                ctx.Entry(entity).State = EntityState.Modified;
+                return ctx.SaveChanges();
+            }
+        }
+
+        public async Task<int> UpdateAsync<TEntity>(TEntity entity) where TEntity : class, new()
+        {
+            using (var ctx = DbContextFactory.CreateContext())
+            {
+                var set = ctx.Set<TEntity>();
+                set.Attach(entity);
+                ctx.Entry(entity).State = EntityState.Modified;
+                return await ctx.SaveChangesAsync();
+            }
+        }
+
+        public int Add<TEntity>(TEntity entity) where TEntity : class, new()
+        {
+            using (var ctx = DbContextFactory.CreateContext())
+            {
+                var set = ctx.Set<TEntity>();
+                set.Add(entity);
+                return ctx.SaveChanges();
+            }
+        }
+
+        public async Task<int> AddAsync<TEntity>(TEntity entity) where TEntity : class, new()
+        {
+            using (var ctx = DbContextFactory.CreateContext())
+            {
+                var set = ctx.Set<TEntity>();
+                set.Add(entity);
+                return await ctx.SaveChangesAsync();
             }
         }
     }
