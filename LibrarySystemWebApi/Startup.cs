@@ -35,6 +35,11 @@ namespace LibrarySystemWebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LibrarySystemWebApi", Version = "v1" });
             });
 
+            RegisterDependencies(services);
+        }
+
+        public void RegisterDependencies(IServiceCollection services)
+        {
             services.AddTransient<ILibraryDbContextFactory, InMemoryGenericDbContextFactory>();
             services.AddTransient<ILibraryRepository, LibraryRepository>();
         }
