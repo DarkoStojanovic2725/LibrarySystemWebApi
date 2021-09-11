@@ -1,18 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using LibrarySystemWebApi.Context;
+using System.Reflection;
 using LibrarySystemWebApi.Repository;
+using LibrarySystemWebApi.Services;
+using MediatR;
 
 namespace LibrarySystemWebApi
 {
@@ -34,7 +29,7 @@ namespace LibrarySystemWebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LibrarySystemWebApi", Version = "v1" });
             });
-
+            services.AddMediatR(Assembly.GetExecutingAssembly(), typeof(Startup).Assembly);
             RegisterDependencies(services);
         }
 
@@ -42,6 +37,7 @@ namespace LibrarySystemWebApi
         {
             services.AddTransient<ILibraryDbContextFactory, InMemoryGenericDbContextFactory>();
             services.AddTransient<ILibraryRepository, LibraryRepository>();
+            services.AddTransient<IAuthorService, AuthorService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

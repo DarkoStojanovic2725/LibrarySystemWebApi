@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using LibrarySystem.CQRS.Commands;
+using LibrarySystem.CQRS.Queries;
+using LibrarySystem.CQRS.Responses;
 using LibrarySystemWebApi.Models;
 using LibrarySystemWebApi.Repository;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace LibrarySystemWebApi.Controllers
 {
@@ -14,10 +15,12 @@ namespace LibrarySystemWebApi.Controllers
     public class AuthorsController : ControllerBase
     {
         private readonly ILibraryRepository _repository;
+        private readonly IMediator _mediator;
 
-        public AuthorsController(ILibraryRepository repository)
+        public AuthorsController(ILibraryRepository repository, IMediator mediator)
         {
             _repository = repository;
+            _mediator = mediator;
         }
 
         [HttpGet]
@@ -26,45 +29,18 @@ namespace LibrarySystemWebApi.Controllers
             return await _repository.GetListAsync<Author>();
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Author>> GetAuthor(int id)
+        [HttpGet("GetAuthor")]
+        public async Task<ActionResult<GetAuthorResponse>> GetAuthor([FromQuery] GetAuthorQuery request)
         {
-            var author = await _repository.GetFirstAsync<Author>(t => t.Id == id);
-
-            if (author == null)
-            {
-                return NotFound();
-            }
-
-            return author;
+            var response = await _mediator.Send(request);
+            return Ok(response);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateAuthor(int id, Author author)
+        [HttpPut("UpdateAuthor")]
+        public async Task<IActionResult> UpdateAuthor([FromBody] UpdateAuthorCommand command)
         {
-            if (id != author.Id)
-            {
-                return BadRequest();
-            }
-
-            try
-            {
-                await _repository.UpdateAsync(author);
-            }
-            catch (DbUpdateException exception)
-            {
-                if (!await _repository.AnyAsync<Author>(t => t.Id == id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    Debug.WriteLine(exception);
-                    throw;
-                }
-            }
-
-            return NoContent();
+            var response = await _mediator.Send(command);
+            return Ok(response);
         }
 
         [HttpPost]

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "kAZWl6PtC4NA811B+K2MP3EbOJb3koLzTPkzGK/GnzG2o20sxKRJigxkAZ7JAaA5gFvYuquDKYQ4oqoQEO+XSQ==",
+  "dgSpecHash": "FvDoDU5Cl5WtymDuGVaKpdqJO4hAnfFnDMN89+0utepspo+JNA5Zwj6uH7qt0rxs4ywQaY5cBKSHhTPah/Wbtw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystemWebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Darko\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\Darko\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
