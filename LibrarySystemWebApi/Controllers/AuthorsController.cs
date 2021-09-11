@@ -23,8 +23,8 @@ namespace LibrarySystemWebApi.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Author>>> GetAuthors()
+        [HttpGet("GetAuthors")]
+        public async Task<ActionResult<IEnumerable<Author>>> GetAuthors([FromQuery] GetAuthorsQuery request)
         {
             return await _repository.GetListAsync<Author>();
         }

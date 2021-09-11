@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using LibrarySystemWebApi.MappingProfiles;
 using LibrarySystemWebApi.Repository;
 using LibrarySystemWebApi.Services;
 using MediatR;
@@ -30,6 +31,7 @@ namespace LibrarySystemWebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LibrarySystemWebApi", Version = "v1" });
             });
             services.AddMediatR(Assembly.GetExecutingAssembly(), typeof(Startup).Assembly);
+            services.AddAutoMapper(typeof(SharedMappingProfile));
             RegisterDependencies(services);
         }
 
