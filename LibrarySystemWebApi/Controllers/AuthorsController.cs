@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using LibrarySystemWebApi.Models;
 using LibrarySystemWebApi.Repository;
@@ -52,8 +53,15 @@ namespace LibrarySystemWebApi.Controllers
             }
             catch (DbUpdateException exception)
             {
-                Console.WriteLine(exception);
-                throw;
+                if (!await _repository.AnyAsync<Author>(t => t.Id == id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    Debug.WriteLine(exception);
+                    throw;
+                }
             }
 
             return NoContent();

@@ -98,5 +98,21 @@ namespace LibrarySystemWebApi.Repository.Generics
                 return await ctx.SaveChangesAsync();
             }
         }
+
+        public bool Any<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new()
+        {
+            using (var ctx = DbContextFactory.CreateContext())
+            {
+                return QueryBuilder(ctx, expression).Any();
+            }
+        }
+
+        public async Task<bool> AnyAsync<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new()
+        {
+            using (var ctx = DbContextFactory.CreateContext())
+            {
+                return await QueryBuilder(ctx, expression).AnyAsync();
+            }
+        }
     }
 }

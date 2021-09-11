@@ -22,5 +22,9 @@ namespace LibrarySystemWebApi.Repository.Generics
         int Add<TEntity>(TEntity entity) where TEntity : class, new();
 
         Task<int> AddAsync<TEntity>(TEntity entity) where TEntity : class, new();
+
+        bool Any<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new();
+
+        Task<bool> AnyAsync<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new();
     }
 }
