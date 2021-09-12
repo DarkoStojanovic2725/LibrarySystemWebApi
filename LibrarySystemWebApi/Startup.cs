@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -5,8 +6,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using LibrarySystemWebApi.DataSeed;
 using LibrarySystemWebApi.MappingProfiles;
 using LibrarySystemWebApi.Middleware;
+using LibrarySystemWebApi.Models;
 using LibrarySystemWebApi.Repository;
 using LibrarySystemWebApi.Services;
 using MediatR;
@@ -43,6 +46,7 @@ namespace LibrarySystemWebApi
             services.AddTransient<ILibraryRepository, LibraryRepository>();
             services.AddTransient<IAuthorService, AuthorService>();
             services.AddTransient<IBookService, BookService>();
+            services.AddTransient<IDataSeeder, DataSeeder>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,6 +71,11 @@ namespace LibrarySystemWebApi
             {
                 endpoints.MapControllers();
             });
+
+            //Temporary code for inserting initial data
+            var service = app.ApplicationServices.GetService<IDataSeeder>();
+
+            service?.SeedData();
         }
     }
 }

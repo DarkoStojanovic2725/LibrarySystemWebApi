@@ -45,5 +45,10 @@ namespace LibrarySystemWebApi.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<AddBookResponse>> AddBook([FromBody] AddBookCommand request) => await _mediator.Send(request);
 
+        [HttpDelete("DeleteById")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<DeleteBookResponse>> DeleteBook([FromQuery] DeleteBookQuery query) => await _mediator.Send(query);
     }
 }

@@ -7,6 +7,8 @@
         Thriller,
         Romance,
         ActionAndAdventure,
-        DetectiveAndMystery
+        DetectiveAndMystery,
+        Tragedy,
+        Satire
     }
 }

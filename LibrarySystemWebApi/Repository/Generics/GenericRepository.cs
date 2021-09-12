@@ -32,11 +32,12 @@ namespace LibrarySystemWebApi.Repository.Generics
             return query;
         }
 
-        public async Task<TEntity> GetFirstAsync<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new()
+        public async Task<TEntity> GetFirstAsync<TEntity>(Expression<Func<TEntity, bool>> expression = null,
+            params Expression<Func<TEntity, object>>[] includeExpression) where TEntity : class, new()
         {
             using (var ctx = DbContextFactory.CreateContext())
             {
-                return await QueryBuilder(ctx, expression).FirstOrDefaultAsync();
+                return await QueryBuilder(ctx, expression, includeExpression).FirstOrDefaultAsync();
             }
         }
 

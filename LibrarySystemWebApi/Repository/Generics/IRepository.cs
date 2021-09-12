@@ -9,7 +9,8 @@ namespace LibrarySystemWebApi.Repository.Generics
     {
         TEntity GetFirst<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new();
 
-        Task<TEntity> GetFirstAsync<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new();
+        Task<TEntity> GetFirstAsync<TEntity>(Expression<Func<TEntity, bool>> expression = null,
+            params Expression<Func<TEntity, object>>[] includeExpression) where TEntity : class, new();
 
         List<TEntity> GetList<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new();
 

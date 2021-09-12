@@ -16,7 +16,7 @@ namespace LibrarySystemWebApi.Services
 
         public async Task<Book> GetBookById(int id)
         {
-            return await _repository.GetFirstAsync<Book>(t => t.Id == id);
+            return await _repository.GetFirstAsync<Book>(t => t.Id == id, includeExpression: t => t.Author);
         }
 
         public async Task<bool> UpdateBook(Book book)
