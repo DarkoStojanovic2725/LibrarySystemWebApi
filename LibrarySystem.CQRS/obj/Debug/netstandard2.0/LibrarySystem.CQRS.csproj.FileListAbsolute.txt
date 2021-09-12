@@ -6,4 +6,3 @@ C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibraryS
 C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystem.CQRS\obj\Debug\netstandard2.0\LibrarySystem.CQRS.csproj.CoreCompileInputs.cache
 C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystem.CQRS\obj\Debug\netstandard2.0\LibrarySystem.CQRS.dll
 C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystem.CQRS\obj\Debug\netstandard2.0\LibrarySystem.CQRS.pdb
-C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystem.CQRS\obj\Debug\netstandard2.0\LibrarySystem.CQRS.csprojAssemblyReference.cache

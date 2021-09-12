@@ -114,5 +114,27 @@ namespace LibrarySystemWebApi.Repository.Generics
                 return await QueryBuilder(ctx, expression).AnyAsync();
             }
         }
+
+        public int Delete<TEntity>(TEntity entity) where TEntity : class, new()
+        {
+            using (var ctx = DbContextFactory.CreateContext())
+            {
+                var set = ctx.Set<TEntity>();
+                set.Attach(entity);
+                set.Remove(entity);
+                return ctx.SaveChanges();
+            }
+        }
+
+        public async Task<int> DeleteAsync<TEntity>(TEntity entity) where TEntity : class, new()
+        {
+            using (var ctx = DbContextFactory.CreateContext())
+            {
+                var set = ctx.Set<TEntity>();
+                ctx.Attach(entity);
+                ctx.Remove(entity);
+                return await ctx.SaveChangesAsync();
+            }
+        }
     }
 }

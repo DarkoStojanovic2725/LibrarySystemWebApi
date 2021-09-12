@@ -26,5 +26,20 @@ namespace LibrarySystemWebApi.Services
             var result = await _repository.UpdateAsync(author);
             return result > 0;
         }
+
+        public async Task<List<Author>> GetAllAuthors()
+        {
+            return await _repository.GetListAsync<Author>();
+        }
+
+        public async Task<int> AddAuthor(Author author)
+        {
+            return await _repository.AddAsync(author);
+        }
+
+        public async Task<int> DeleteAuthor(Author author)
+        {
+            return await _repository.DeleteAsync(author);
+        }
     }
 }

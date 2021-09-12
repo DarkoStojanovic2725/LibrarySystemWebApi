@@ -1,4 +1,5 @@
 ﻿using LibrarySystem.CQRS.Responses;
+using LibrarySystem.CQRS.Responses.Author;
 using MediatR;
 
 namespace LibrarySystem.CQRS.Queries

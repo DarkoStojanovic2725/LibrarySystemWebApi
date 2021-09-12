@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using LibrarySystemWebApi.MappingProfiles;
+using LibrarySystemWebApi.Middleware;
 using LibrarySystemWebApi.Repository;
 using LibrarySystemWebApi.Services;
 using MediatR;
@@ -32,6 +33,7 @@ namespace LibrarySystemWebApi
             });
             services.AddMediatR(Assembly.GetExecutingAssembly(), typeof(Startup).Assembly);
             services.AddAutoMapper(typeof(SharedMappingProfile));
+
             RegisterDependencies(services);
         }
 
@@ -55,6 +57,8 @@ namespace LibrarySystemWebApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseMiddleware(typeof(RestErrorHandlingMiddleware));
 
             app.UseAuthorization();
 

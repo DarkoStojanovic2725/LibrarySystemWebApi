@@ -1,12 +1,14 @@
-﻿using LibrarySystem.CQRS.Responses;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using LibrarySystem.CQRS.Responses;
 using LibrarySystem.CQRS.Responses.Author;
 using MediatR;
 
 namespace LibrarySystem.CQRS.Commands
 {
-    public class UpdateAuthorCommand : IRequest<UpdateAuthorResponse>
+    public class AddAuthorCommand : IRequest<AddAuthorResponse>
     {
-        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
     }

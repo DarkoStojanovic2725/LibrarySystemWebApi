@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using LibrarySystem.CQRS.Commands;
 using LibrarySystem.CQRS.Queries;
 using LibrarySystem.CQRS.Responses;
+using LibrarySystem.CQRS.Responses.Author;
 using LibrarySystemWebApi.Services;
 using MediatR;
 
@@ -24,20 +26,16 @@ namespace LibrarySystemWebApi.Handlers
         {
             var response = new UpdateAuthorResponse();
 
-            if (request.Id == 0 && request.Id < 0)
-            {
-                throw new Exception();
-            }
+            
 
             var authorToUpdate = await _authorService.GetAuthorById(request.Id);
 
-            if (authorToUpdate == null)
-            {
-                throw new Exception();
-            }
 
             authorToUpdate.FirstName = request.FirstName;
-            response.Success = await _authorService.UpdateAuthor(authorToUpdate);
+            authorToUpdate.LastName = request.LastName;
+            authorToUpdate.ModifiedUtcDateTime = DateTime.Now;
+
+            await _authorService.UpdateAuthor(authorToUpdate);
             return response;
         }
     }

@@ -26,5 +26,9 @@ namespace LibrarySystemWebApi.Repository.Generics
         bool Any<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new();
 
         Task<bool> AnyAsync<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new();
+
+        int Delete<TEntity>(TEntity entity) where TEntity : class, new();
+
+        Task<int> DeleteAsync<TEntity>(TEntity entity) where TEntity : class, new();
     }
 }
