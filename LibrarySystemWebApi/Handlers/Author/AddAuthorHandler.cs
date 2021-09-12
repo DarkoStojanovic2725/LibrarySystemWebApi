@@ -4,13 +4,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using LibrarySystem.CQRS.Commands;
+using LibrarySystem.CQRS.Commands.Author;
 using LibrarySystem.CQRS.Responses.Author;
 using LibrarySystemWebApi.Exceptions;
-using LibrarySystemWebApi.Models;
 using LibrarySystemWebApi.Services;
 using MediatR;
 
-namespace LibrarySystemWebApi.Handlers
+namespace LibrarySystemWebApi.Handlers.Author
 {
     public class AddAuthorHandler : IRequestHandler<AddAuthorCommand, AddAuthorResponse>
     {
@@ -32,7 +32,7 @@ namespace LibrarySystemWebApi.Handlers
                 throw new RestException(HttpStatusCode.BadRequest, "Values can't be empty");
             }
 
-            var author = _mapper.Map<Author>(request);
+            var author = _mapper.Map<Models.Author>(request);
 
             author.CreatedUtcDateTime = DateTime.Now;
             author.ModifiedUtcDateTime = DateTime.Now;

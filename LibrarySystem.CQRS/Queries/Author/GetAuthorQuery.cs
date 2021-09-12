@@ -1,8 +1,7 @@
-﻿using LibrarySystem.CQRS.Responses;
-using LibrarySystem.CQRS.Responses.Author;
+﻿using LibrarySystem.CQRS.Responses.Author;
 using MediatR;
 
-namespace LibrarySystem.CQRS.Queries
+namespace LibrarySystem.CQRS.Queries.Author
 {
     public class GetAuthorQuery : IRequest<GetAuthorResponse>
     {

@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using LibrarySystem.CQRS.Commands;
-using LibrarySystem.CQRS.Queries;
-using LibrarySystem.CQRS.Responses;
+using LibrarySystem.CQRS.Commands.Author;
 using LibrarySystem.CQRS.Responses.Author;
 using LibrarySystemWebApi.Services;
 using MediatR;
 
-namespace LibrarySystemWebApi.Handlers
+namespace LibrarySystemWebApi.Handlers.Author
 {
     public class UpdateAuthorHandler : IRequestHandler<UpdateAuthorCommand, UpdateAuthorResponse>
     {

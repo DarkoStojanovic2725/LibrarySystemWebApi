@@ -1,4 +1,4 @@
-﻿namespace LibrarySystemWebApi.Enums
+﻿namespace LibrarySystem.CQRS.Shared.Enums
 {
     public enum Genre
     {

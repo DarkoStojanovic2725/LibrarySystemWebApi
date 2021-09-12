@@ -42,6 +42,7 @@ namespace LibrarySystemWebApi
             services.AddTransient<ILibraryDbContextFactory, InMemoryGenericDbContextFactory>();
             services.AddTransient<ILibraryRepository, LibraryRepository>();
             services.AddTransient<IAuthorService, AuthorService>();
+            services.AddTransient<IBookService, BookService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

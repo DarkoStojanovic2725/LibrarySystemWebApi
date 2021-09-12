@@ -2,13 +2,13 @@
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using LibrarySystem.CQRS.Queries;
+using LibrarySystem.CQRS.Queries.Author;
 using LibrarySystem.CQRS.Responses.Author;
 using LibrarySystemWebApi.Exceptions;
 using LibrarySystemWebApi.Services;
 using MediatR;
 
-namespace LibrarySystemWebApi.Handlers
+namespace LibrarySystemWebApi.Handlers.Author
 {
     public class GetAuthorHandler : IRequestHandler<GetAuthorQuery, GetAuthorResponse>
     {

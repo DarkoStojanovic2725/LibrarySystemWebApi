@@ -1,15 +1,13 @@
-﻿using System;
-using System.Diagnostics;
-using System.Net;
+﻿using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using LibrarySystem.CQRS.Queries;
+using LibrarySystem.CQRS.Queries.Author;
 using LibrarySystem.CQRS.Responses.Author;
 using LibrarySystemWebApi.Exceptions;
 using LibrarySystemWebApi.Services;
 using MediatR;
 
-namespace LibrarySystemWebApi.Handlers
+namespace LibrarySystemWebApi.Handlers.Author
 {
     public class DeleteAuthorHandler : IRequestHandler<DeleteAuthorQuery, DeleteAuthorResponse>
     {
