@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using LibrarySystem.CQRS.Commands.Book;
 using LibrarySystem.CQRS.Responses.Book;
+using LibrarySystem.CQRS.Shared.Enums;
+using LibrarySystemWebApi.Exceptions;
 using LibrarySystemWebApi.Services;
 using MediatR;
 
@@ -23,9 +26,31 @@ namespace LibrarySystemWebApi.Handlers.Book
             
             var bookToUpdate = await _bookService.GetBookById(request.Id);
 
+            if (bookToUpdate == null)
+            {
+                throw new RestException(HttpStatusCode.NotFound, "Book not found");
+            }
+
+            if (string.IsNullOrWhiteSpace(request.Title) && string.IsNullOrWhiteSpace(request.Genre))
+            {
+                throw new RestException(HttpStatusCode.BadRequest, "Values can't be empty");
+            }
+
+            if (!string.IsNullOrWhiteSpace(request.Genre))
+            {
+                var enumValueValid = Enum.TryParse<Genre>(request.Genre, true, out var parsedGenre);
+
+                if (!enumValueValid)
+                {
+                    throw new RestException(HttpStatusCode.BadRequest, "Enum value doesn't exist");
+                }
+
+                bookToUpdate.Genre = parsedGenre;
+            }
+
             bookToUpdate.Title = request.Title;
             bookToUpdate.Description = request.Description;
-            bookToUpdate.Genre = request.Genre;
+
             bookToUpdate.AuthorId = request.AuthorId;
 
             bookToUpdate.ModifiedUtcDateTime = DateTime.Now;

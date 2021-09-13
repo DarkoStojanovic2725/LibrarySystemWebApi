@@ -36,6 +36,7 @@ namespace LibrarySystemWebApi.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<UpdateBookResponse> UpdateBook([FromBody] UpdateBookCommand command) => await _mediator.Send(command);
 
         [HttpPost("Insert")]

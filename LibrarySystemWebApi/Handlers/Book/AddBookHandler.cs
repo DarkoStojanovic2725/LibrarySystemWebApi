@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using LibrarySystem.CQRS.Commands.Book;
 using LibrarySystem.CQRS.Responses.Book;
+using LibrarySystem.CQRS.Shared.Enums;
 using LibrarySystemWebApi.Exceptions;
 using LibrarySystemWebApi.Services;
 using MediatR;
@@ -28,7 +29,7 @@ namespace LibrarySystemWebApi.Handlers.Book
         {
             var response = new AddBookResponse();
 
-            if (request != null && string.IsNullOrWhiteSpace(request.Title))
+            if (request != null && string.IsNullOrWhiteSpace(request.Title) && string.IsNullOrWhiteSpace(request.Genre))
             {
                 throw new RestException(HttpStatusCode.BadRequest, "Values can't be empty");
             }
@@ -41,6 +42,15 @@ namespace LibrarySystemWebApi.Handlers.Book
                 if (author == null)
                 {
                     throw new RestException(HttpStatusCode.NotFound, "Author doesn't exist");
+                }
+
+                if (!string.IsNullOrWhiteSpace(request.Genre))
+                {
+                    var enumValueValid = Enum.TryParse<Genre>(request.Genre, true, out _);
+                    if (!enumValueValid)
+                    {
+                        throw new RestException(HttpStatusCode.BadRequest, "Enum value doesn't exist");
+                    }
                 }
             }
 

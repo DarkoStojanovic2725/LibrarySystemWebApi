@@ -34,6 +34,9 @@ namespace LibrarySystemWebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LibrarySystemWebApi", Version = "v1" });
             });
+
+            services.AddCors();
+
             services.AddMediatR(Assembly.GetExecutingAssembly(), typeof(Startup).Assembly);
             services.AddAutoMapper(typeof(SharedMappingProfile));
 
@@ -52,6 +55,10 @@ namespace LibrarySystemWebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(options => options.WithOrigins("http://localhost:4200")
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
