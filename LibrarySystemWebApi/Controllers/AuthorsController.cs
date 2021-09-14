@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using LibrarySystemWebApi.Models;
-using LibrarySystemWebApi.Repository;
+using LibrarySystem.CQRS.Commands;
+using LibrarySystem.CQRS.Commands.Author;
+using LibrarySystem.CQRS.Queries;
+using LibrarySystem.CQRS.Queries.Author;
+using LibrarySystem.CQRS.Responses.Author;
+using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace LibrarySystemWebApi.Controllers
 {
@@ -13,66 +15,41 @@ namespace LibrarySystemWebApi.Controllers
     [ApiController]
     public class AuthorsController : ControllerBase
     {
-        private readonly ILibraryRepository _repository;
+        private readonly IMediator _mediator;
 
-        public AuthorsController(ILibraryRepository repository)
+        public AuthorsController(IMediator mediator)
         {
-            _repository = repository;
+            _mediator = mediator;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Author>>> GetAuthors()
-        {
-            return await _repository.GetListAsync<Author>();
-        }
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<IEnumerable<GetAuthorResponse>>> GetAuthors([FromQuery] GetAuthorsQuery request) => await _mediator.Send(request);
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Author>> GetAuthor(int id)
-        {
-            var author = await _repository.GetFirstAsync<Author>(t => t.Id == id);
+        [HttpGet("GetById")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<GetAuthorResponse>> GetAuthor([FromQuery] GetAuthorQuery request) => await _mediator.Send(request);
 
-            if (author == null)
-            {
-                return NotFound();
-            }
+        [HttpPut("Update")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<UpdateAuthorResponse> UpdateAuthor([FromBody] UpdateAuthorCommand command) => await _mediator.Send(command);
 
-            return author;
-        }
+        [HttpPost("Insert")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<AddAuthorResponse>> AddAuthor([FromBody] AddAuthorCommand request) => await _mediator.Send(request);
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateAuthor(int id, Author author)
-        {
-            if (id != author.Id)
-            {
-                return BadRequest();
-            }
-
-            try
-            {
-                await _repository.UpdateAsync(author);
-            }
-            catch (DbUpdateException exception)
-            {
-                if (!await _repository.AnyAsync<Author>(t => t.Id == id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    Debug.WriteLine(exception);
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        [HttpPost]
-        public async Task<ActionResult<Author>> AddAuthor(Author author)
-        {
-            await _repository.AddAsync(author);
-
-            return CreatedAtAction("GetAuthor", new { id = author.Id }, author);
-        }
+        [HttpDelete("DeleteById")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<DeleteAuthorResponse>> DeleteAuthor([FromQuery] DeleteAuthorQuery query) => await _mediator.Send(query);
     }
 }

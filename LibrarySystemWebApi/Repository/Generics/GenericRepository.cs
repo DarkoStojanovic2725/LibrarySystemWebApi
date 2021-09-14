@@ -13,7 +13,8 @@ namespace LibrarySystemWebApi.Repository.Generics
         protected abstract IDbContextFactory<TContext> DbContextFactory { get; }
 
         private IQueryable<TEntity> QueryBuilder<TEntity>(TContext context,
-            Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new()
+            Expression<Func<TEntity, bool>> expression = null,
+            params Expression<Func<TEntity, object>>[] includeExpressions) where TEntity : class, new()
         {
             IQueryable<TEntity> query = context.Set<TEntity>();
 
@@ -22,14 +23,21 @@ namespace LibrarySystemWebApi.Repository.Generics
                 query = query.Where(expression);
             }
 
+            if (includeExpressions != null && includeExpressions.Any())
+            {
+                query = includeExpressions.Aggregate(query,
+                    (currentEntity, includeExpression) => currentEntity.Include(includeExpression));
+            }
+
             return query;
         }
 
-        public async Task<TEntity> GetFirstAsync<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new()
+        public async Task<TEntity> GetFirstAsync<TEntity>(Expression<Func<TEntity, bool>> expression = null,
+            params Expression<Func<TEntity, object>>[] includeExpression) where TEntity : class, new()
         {
             using (var ctx = DbContextFactory.CreateContext())
             {
-                return await QueryBuilder(ctx, expression).FirstOrDefaultAsync();
+                return await QueryBuilder(ctx, expression, includeExpression).FirstOrDefaultAsync();
             }
         }
 
@@ -49,11 +57,12 @@ namespace LibrarySystemWebApi.Repository.Generics
             }
         }
 
-        public async Task<List<TEntity>> GetListAsync<TEntity>(Expression<Func<TEntity, bool>> expression = null) where TEntity : class, new()
+        public async Task<List<TEntity>> GetListAsync<TEntity>(Expression<Func<TEntity, bool>> expression = null,
+            params Expression<Func<TEntity, object>>[] includeExpression) where TEntity : class, new()
         {
             using (var ctx = DbContextFactory.CreateContext())
             {
-                return await QueryBuilder(ctx, expression).ToListAsync();
+                return await QueryBuilder(ctx, expression, includeExpression).ToListAsync();
             }
         }
 
@@ -112,6 +121,28 @@ namespace LibrarySystemWebApi.Repository.Generics
             using (var ctx = DbContextFactory.CreateContext())
             {
                 return await QueryBuilder(ctx, expression).AnyAsync();
+            }
+        }
+
+        public int Delete<TEntity>(TEntity entity) where TEntity : class, new()
+        {
+            using (var ctx = DbContextFactory.CreateContext())
+            {
+                var set = ctx.Set<TEntity>();
+                set.Attach(entity);
+                set.Remove(entity);
+                return ctx.SaveChanges();
+            }
+        }
+
+        public async Task<int> DeleteAsync<TEntity>(TEntity entity) where TEntity : class, new()
+        {
+            using (var ctx = DbContextFactory.CreateContext())
+            {
+                var set = ctx.Set<TEntity>();
+                ctx.Attach(entity);
+                ctx.Remove(entity);
+                return await ctx.SaveChangesAsync();
             }
         }
     }

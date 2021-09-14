@@ -1,11 +1,13 @@
 ﻿using System;
-using LibrarySystemWebApi.Enums;
+using System.ComponentModel.DataAnnotations;
+using LibrarySystem.CQRS.Shared.Enums;
 using LibrarySystemWebApi.Models.Interfaces;
 
 namespace LibrarySystemWebApi.Models
 {
     public class Book : IEntity<int>
     {
+        [Key]
         public int Id { get; set; }
         public int AuthorId { get; set; }
         public string Title { get; set; }
