@@ -5,6 +5,7 @@ namespace LibrarySystem.CQRS.Responses.Book
     public class GetBookResponse
     {
         public int Id { get; set; }
+        public int AuthorId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public int Genre { get; set; }
