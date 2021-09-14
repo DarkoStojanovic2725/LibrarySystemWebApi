@@ -2,8 +2,6 @@
 using System.ComponentModel.DataAnnotations;
 using LibrarySystem.CQRS.Shared.Enums;
 using LibrarySystemWebApi.Models.Interfaces;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace LibrarySystemWebApi.Models
 {
@@ -14,7 +12,6 @@ namespace LibrarySystemWebApi.Models
         public int AuthorId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        [JsonConverter(typeof(StringEnumConverter))]
         public Genre Genre { get; set; }
         public DateTime CreatedUtcDateTime { get; set; }
         public DateTime ModifiedUtcDateTime { get; set; }

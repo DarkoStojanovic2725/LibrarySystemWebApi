@@ -29,7 +29,7 @@ namespace LibrarySystemWebApi.Handlers.Book
         {
             var response = new AddBookResponse();
 
-            if (request != null && string.IsNullOrWhiteSpace(request.Title) && string.IsNullOrWhiteSpace(request.Genre))
+            if (request != null && string.IsNullOrWhiteSpace(request.Title) /*&& string.IsNullOrWhiteSpace(request.Genre)*/)
             {
                 throw new RestException(HttpStatusCode.BadRequest, "Values can't be empty");
             }
@@ -44,14 +44,14 @@ namespace LibrarySystemWebApi.Handlers.Book
                     throw new RestException(HttpStatusCode.NotFound, "Author doesn't exist");
                 }
 
-                if (!string.IsNullOrWhiteSpace(request.Genre))
-                {
-                    var enumValueValid = Enum.TryParse<Genre>(request.Genre, true, out _);
-                    if (!enumValueValid)
-                    {
-                        throw new RestException(HttpStatusCode.BadRequest, "Enum value doesn't exist");
-                    }
-                }
+                //if (!string.IsNullOrWhiteSpace(request.Genre))
+                //{
+                //    var enumValueValid = Enum.TryParse<Genre>(request.Genre, true, out _);
+                //    if (!enumValueValid)
+                //    {
+                //        throw new RestException(HttpStatusCode.BadRequest, "Enum value doesn't exist");
+                //    }
+                //}
             }
 
             var book = _mapper.Map<Models.Book>(request);

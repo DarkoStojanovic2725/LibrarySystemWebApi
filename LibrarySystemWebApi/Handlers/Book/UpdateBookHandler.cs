@@ -31,26 +31,26 @@ namespace LibrarySystemWebApi.Handlers.Book
                 throw new RestException(HttpStatusCode.NotFound, "Book not found");
             }
 
-            if (string.IsNullOrWhiteSpace(request.Title) && string.IsNullOrWhiteSpace(request.Genre))
-            {
-                throw new RestException(HttpStatusCode.BadRequest, "Values can't be empty");
-            }
+            //if (string.IsNullOrWhiteSpace(request.Title) && string.IsNullOrWhiteSpace(request.Genre))
+            //{
+            //    throw new RestException(HttpStatusCode.BadRequest, "Values can't be empty");
+            //}
 
-            if (!string.IsNullOrWhiteSpace(request.Genre))
-            {
-                var enumValueValid = Enum.TryParse<Genre>(request.Genre, true, out var parsedGenre);
+            //if (!string.IsNullOrWhiteSpace(request.Genre))
+            //{
+            //    var enumValueValid = Enum.TryParse<Genre>(request.Genre, true, out var parsedGenre);
 
-                if (!enumValueValid)
-                {
-                    throw new RestException(HttpStatusCode.BadRequest, "Enum value doesn't exist");
-                }
+            //    if (!enumValueValid)
+            //    {
+            //        throw new RestException(HttpStatusCode.BadRequest, "Enum value doesn't exist");
+            //    }
 
-                bookToUpdate.Genre = parsedGenre;
-            }
+            //    bookToUpdate.Genre = parsedGenre;
+            //}
 
             bookToUpdate.Title = request.Title;
             bookToUpdate.Description = request.Description;
-
+            bookToUpdate.Genre = request.Genre;
             bookToUpdate.AuthorId = request.AuthorId;
 
             bookToUpdate.ModifiedUtcDateTime = DateTime.Now;
