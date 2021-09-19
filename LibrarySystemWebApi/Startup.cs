@@ -5,11 +5,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using LibrarySystem.Repository.DependencyRegistry;
 using LibrarySystem.Repository.Repository;
+using LibrarySystem.Service.Services;
 using LibrarySystemWebApi.DataSeed;
 using LibrarySystemWebApi.MappingProfiles;
 using LibrarySystemWebApi.Middleware;
-using LibrarySystemWebApi.Services;
 using MediatR;
 
 namespace LibrarySystemWebApi
@@ -43,8 +44,7 @@ namespace LibrarySystemWebApi
 
         public void RegisterDependencies(IServiceCollection services)
         {
-            services.AddTransient<ILibraryDbContextFactory, InMemoryGenericDbContextFactory>();
-            services.AddTransient<ILibraryRepository, LibraryRepository>();
+            RepositoryDependencies.RegisterDependencies(services);
             services.AddTransient<IAuthorService, AuthorService>();
             services.AddTransient<IBookService, BookService>();
             services.AddTransient<IDataSeeder, DataSeeder>();

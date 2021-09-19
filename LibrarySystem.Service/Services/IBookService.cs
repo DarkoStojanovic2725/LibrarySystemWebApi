@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using LibrarySystem.Data.Models;
 
-namespace LibrarySystemWebApi.Services
+namespace LibrarySystem.Service.Services
 {
     public interface IBookService
     {

@@ -30,6 +30,7 @@
           "LibrarySystem.CQRS": "1.0.0",
           "LibrarySystem.Data": "1.0.0",
           "LibrarySystem.Repository": "1.0.0",
+          "LibrarySystem.Service": "1.0.0",
           "MediatR": "9.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
@@ -1436,6 +1437,17 @@
         },
         "compile": {
           "LibrarySystem.Repository.dll": {}
+        }
+      },
+      "LibrarySystem.Service/1.0.0": {
+        "dependencies": {
+          "LibrarySystem.Repository": "1.0.0"
+        },
+        "runtime": {
+          "LibrarySystem.Service.dll": {}
+        },
+        "compile": {
+          "LibrarySystem.Service.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -3890,6 +3902,11 @@
       "sha512": ""
     },
     "LibrarySystem.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibrarySystem.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

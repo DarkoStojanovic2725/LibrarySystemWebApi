@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using LibrarySystem.CQRS.Queries.Author;
 using LibrarySystem.CQRS.Responses.Author;
-using LibrarySystemWebApi.Services;
+using LibrarySystem.Service.Services;
 using MediatR;
 
 namespace LibrarySystemWebApi.Handlers.Author

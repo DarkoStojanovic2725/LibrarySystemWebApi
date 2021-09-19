@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using LibrarySystem.Data.Models;
 using LibrarySystem.Repository.Repository;
 
-namespace LibrarySystemWebApi.Services
+namespace LibrarySystem.Service.Services
 {
     public class BookService : IBookService
     {
