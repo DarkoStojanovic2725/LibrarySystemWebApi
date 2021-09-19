@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using LibrarySystem.CQRS.Commands.Book;
 using LibrarySystem.CQRS.Responses.Book;
-using LibrarySystem.CQRS.Shared.Enums;
 using LibrarySystemWebApi.Exceptions;
 using LibrarySystemWebApi.Services;
 using MediatR;
@@ -54,7 +53,7 @@ namespace LibrarySystemWebApi.Handlers.Book
                 //}
             }
 
-            var book = _mapper.Map<Models.Book>(request);
+            var book = _mapper.Map<LibrarySystem.Data.Models.Book>(request);
 
             book.CreatedUtcDateTime = DateTime.Now;
             book.ModifiedUtcDateTime = DateTime.Now;

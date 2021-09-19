@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using LibrarySystemWebApi.Models;
+using LibrarySystem.Data.Models;
 
 namespace LibrarySystemWebApi.Services
 {

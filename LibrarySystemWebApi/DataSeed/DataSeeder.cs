@@ -1,7 +1,7 @@
 ﻿using System;
-using LibrarySystem.CQRS.Shared.Enums;
-using LibrarySystemWebApi.Models;
-using LibrarySystemWebApi.Repository;
+using LibrarySystem.Data.Enums;
+using LibrarySystem.Data.Models;
+using LibrarySystem.Repository.Repository;
 
 namespace LibrarySystemWebApi.DataSeed
 {

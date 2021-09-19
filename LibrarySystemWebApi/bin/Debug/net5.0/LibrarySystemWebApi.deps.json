@@ -28,6 +28,8 @@
           "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "LibrarySystem.CQRS": "1.0.0",
+          "LibrarySystem.Data": "1.0.0",
+          "LibrarySystem.Repository": "1.0.0",
           "MediatR": "9.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
@@ -1404,6 +1406,7 @@
       },
       "LibrarySystem.CQRS/1.0.0": {
         "dependencies": {
+          "LibrarySystem.Data": "1.0.0",
           "MediatR": "9.0.0"
         },
         "runtime": {
@@ -1411,6 +1414,28 @@
         },
         "compile": {
           "LibrarySystem.CQRS.dll": {}
+        }
+      },
+      "LibrarySystem.Data/1.0.0": {
+        "runtime": {
+          "LibrarySystem.Data.dll": {}
+        },
+        "compile": {
+          "LibrarySystem.Data.dll": {}
+        }
+      },
+      "LibrarySystem.Repository/1.0.0": {
+        "dependencies": {
+          "LibrarySystem.Data": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.InMemory": "5.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0"
+        },
+        "runtime": {
+          "LibrarySystem.Repository.dll": {}
+        },
+        "compile": {
+          "LibrarySystem.Repository.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -3855,6 +3880,16 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "LibrarySystem.CQRS/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibrarySystem.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibrarySystem.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

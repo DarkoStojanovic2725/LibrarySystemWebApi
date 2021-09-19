@@ -1,5 +1,5 @@
 ﻿using LibrarySystem.CQRS.Responses.Book;
-using LibrarySystem.CQRS.Shared.Enums;
+using LibrarySystem.Data.Enums;
 using MediatR;
 
 namespace LibrarySystem.CQRS.Commands.Book
