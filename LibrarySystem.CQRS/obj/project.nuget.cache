@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "k1zeI3KqbNk04HJJqGTKdmgHvH4PlwhEtpfVKE+3hcWVNcPxAUnpgdTF1nPZxV2ZRV0PmA1i4sH8d9pj6k7+cQ==",
+  "dgSpecHash": "s/EQsDG+zykTojvzRirApVGJHlyystZ2oScaSAQbsUFj1szbnGTBbHBh5+e6ogM/GwjD3xr29m6CM8+hwovS4w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.CQRS\\LibrarySystem.CQRS.csproj",
   "expectedPackageFiles": [

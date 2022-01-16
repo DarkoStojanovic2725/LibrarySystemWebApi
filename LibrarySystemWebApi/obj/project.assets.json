@@ -1614,6 +1614,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "LibrarySystem.Data": "1.0.0",
           "MediatR": "9.0.0"
         },
         "compile": {
@@ -1621,6 +1622,45 @@
         },
         "runtime": {
           "bin/placeholder/LibrarySystem.CQRS.dll": {}
+        }
+      },
+      "LibrarySystem.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/LibrarySystem.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibrarySystem.Data.dll": {}
+        }
+      },
+      "LibrarySystem.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "LibrarySystem.Data": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.InMemory": "5.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LibrarySystem.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibrarySystem.Repository.dll": {}
+        }
+      },
+      "LibrarySystem.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "LibrarySystem.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LibrarySystem.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibrarySystem.Service.dll": {}
         }
       }
     }
@@ -6039,6 +6079,21 @@
       "type": "project",
       "path": "../LibrarySystem.CQRS/LibrarySystem.CQRS.csproj",
       "msbuildProject": "../LibrarySystem.CQRS/LibrarySystem.CQRS.csproj"
+    },
+    "LibrarySystem.Data/1.0.0": {
+      "type": "project",
+      "path": "../LibrarySystem.Data/LibrarySystem.Data.csproj",
+      "msbuildProject": "../LibrarySystem.Data/LibrarySystem.Data.csproj"
+    },
+    "LibrarySystem.Repository/1.0.0": {
+      "type": "project",
+      "path": "../LibrarySystem.Repository/LibrarySystem.Repository.csproj",
+      "msbuildProject": "../LibrarySystem.Repository/LibrarySystem.Repository.csproj"
+    },
+    "LibrarySystem.Service/1.0.0": {
+      "type": "project",
+      "path": "../LibrarySystem.Service/LibrarySystem.Service.csproj",
+      "msbuildProject": "../LibrarySystem.Service/LibrarySystem.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6046,6 +6101,9 @@
       "AutoMapper >= 10.1.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
       "LibrarySystem.CQRS >= 1.0.0",
+      "LibrarySystem.Data >= 1.0.0",
+      "LibrarySystem.Repository >= 1.0.0",
+      "LibrarySystem.Service >= 1.0.0",
       "MediatR >= 9.0.0",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 9.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.0",
@@ -6083,6 +6141,15 @@
           "projectReferences": {
             "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.CQRS\\LibrarySystem.CQRS.csproj": {
               "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.CQRS\\LibrarySystem.CQRS.csproj"
+            },
+            "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Data\\LibrarySystem.Data.csproj": {
+              "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Data\\LibrarySystem.Data.csproj"
+            },
+            "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Repository\\LibrarySystem.Repository.csproj": {
+              "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Repository\\LibrarySystem.Repository.csproj"
+            },
+            "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Service\\LibrarySystem.Service.csproj": {
+              "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Service\\LibrarySystem.Service.csproj"
             }
           }
         }

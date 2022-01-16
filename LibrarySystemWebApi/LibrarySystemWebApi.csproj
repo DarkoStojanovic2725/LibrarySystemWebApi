@@ -17,6 +17,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LibrarySystem.CQRS\LibrarySystem.CQRS.csproj" />
+    <ProjectReference Include="..\LibrarySystem.Data\LibrarySystem.Data.csproj" />
+    <ProjectReference Include="..\LibrarySystem.Repository\LibrarySystem.Repository.csproj" />
+    <ProjectReference Include="..\LibrarySystem.Service\LibrarySystem.Service.csproj" />
   </ItemGroup>
 
 </Project>

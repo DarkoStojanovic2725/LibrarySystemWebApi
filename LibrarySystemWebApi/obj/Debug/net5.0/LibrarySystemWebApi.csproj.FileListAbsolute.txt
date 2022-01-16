@@ -62,3 +62,9 @@ C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibraryS
 C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystemWebApi\bin\Debug\net5.0\LibrarySystem.CQRS.pdb
 C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystemWebApi\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystemWebApi\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystemWebApi\bin\Debug\net5.0\LibrarySystem.Data.dll
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystemWebApi\bin\Debug\net5.0\LibrarySystem.Data.pdb
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystemWebApi\bin\Debug\net5.0\LibrarySystem.Repository.dll
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystemWebApi\bin\Debug\net5.0\LibrarySystem.Repository.pdb
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystemWebApi\bin\Debug\net5.0\LibrarySystem.Service.dll
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystemWebApi\bin\Debug\net5.0\LibrarySystem.Service.pdb

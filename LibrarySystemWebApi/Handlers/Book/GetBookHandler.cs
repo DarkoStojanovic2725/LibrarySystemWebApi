@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using LibrarySystem.CQRS.Queries.Book;
 using LibrarySystem.CQRS.Responses.Book;
+using LibrarySystem.Service.Services;
 using LibrarySystemWebApi.Exceptions;
-using LibrarySystemWebApi.Services;
 using MediatR;
 
 namespace LibrarySystemWebApi.Handlers.Book

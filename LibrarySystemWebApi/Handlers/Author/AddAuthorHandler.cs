@@ -3,11 +3,10 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using LibrarySystem.CQRS.Commands;
 using LibrarySystem.CQRS.Commands.Author;
 using LibrarySystem.CQRS.Responses.Author;
+using LibrarySystem.Service.Services;
 using LibrarySystemWebApi.Exceptions;
-using LibrarySystemWebApi.Services;
 using MediatR;
 
 namespace LibrarySystemWebApi.Handlers.Author
@@ -32,7 +31,7 @@ namespace LibrarySystemWebApi.Handlers.Author
                 throw new RestException(HttpStatusCode.BadRequest, "Values can't be empty");
             }
 
-            var author = _mapper.Map<Models.Author>(request);
+            var author = _mapper.Map<LibrarySystem.Data.Models.Author>(request);
 
             author.CreatedUtcDateTime = DateTime.Now;
             author.ModifiedUtcDateTime = DateTime.Now;

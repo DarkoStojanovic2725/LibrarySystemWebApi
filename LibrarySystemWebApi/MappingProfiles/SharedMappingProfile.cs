@@ -3,7 +3,7 @@ using LibrarySystem.CQRS.Commands.Author;
 using LibrarySystem.CQRS.Commands.Book;
 using LibrarySystem.CQRS.Responses.Author;
 using LibrarySystem.CQRS.Responses.Book;
-using LibrarySystemWebApi.Models;
+using LibrarySystem.Data.Models;
 
 namespace LibrarySystemWebApi.MappingProfiles
 {
