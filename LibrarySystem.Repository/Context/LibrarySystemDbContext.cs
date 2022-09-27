@@ -1,4 +1,7 @@
-﻿using LibrarySystem.Data.Models;
+﻿using System;
+using LibrarySystem.Data.Enums;
+using LibrarySystem.Data.Models;
+using LibrarySystem.Repository.DataSeedExtensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibrarySystem.Repository.Context
@@ -43,6 +46,8 @@ namespace LibrarySystem.Repository.Context
                 cfg.Property(e => e.Genre)
                     .IsRequired();
             });
+
+            modelBuilder.PopulateInitialData();
         }
     }
 }

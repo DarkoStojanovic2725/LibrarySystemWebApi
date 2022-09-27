@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9zNV1rSGiGUd0yKFkOZtCdStpwc+9Op35+Xf0GTvmYjZ1WjauznxaRgTFaWmbB9uwsUs9zFqxL2dTqTeA+f5SQ==",
+  "dgSpecHash": "wDYiOdlaguKshcjH1kMxE1Oed9eKASYZBRz+NnyIQZeJhbrdIsPFd/UZef8pFi2Br+NsRrKehFuu4gT2q3WqnQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystemWebApi.csproj",
+  "projectFilePath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystemWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Darko\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

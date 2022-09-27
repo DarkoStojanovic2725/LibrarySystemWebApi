@@ -6,3 +6,12 @@ C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibraryS
 C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystem.Data\bin\Debug\netstandard2.0\LibrarySystem.Data.pdb
 C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystem.Data\obj\Debug\netstandard2.0\LibrarySystem.Data.dll
 C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystem.Data\obj\Debug\netstandard2.0\LibrarySystem.Data.pdb
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Data\bin\Debug\netstandard2.0\LibrarySystem.Data.deps.json
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Data\bin\Debug\netstandard2.0\LibrarySystem.Data.dll
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Data\bin\Debug\netstandard2.0\LibrarySystem.Data.pdb
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Data\obj\Debug\netstandard2.0\LibrarySystem.Data.csprojAssemblyReference.cache
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Data\obj\Debug\netstandard2.0\LibrarySystem.Data.AssemblyInfoInputs.cache
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Data\obj\Debug\netstandard2.0\LibrarySystem.Data.AssemblyInfo.cs
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Data\obj\Debug\netstandard2.0\LibrarySystem.Data.csproj.CoreCompileInputs.cache
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Data\obj\Debug\netstandard2.0\LibrarySystem.Data.dll
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Data\obj\Debug\netstandard2.0\LibrarySystem.Data.pdb

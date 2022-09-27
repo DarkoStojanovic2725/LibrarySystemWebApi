@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EkAawnw+uhZA5jbICDFmhs12z9XaXdHmnKprGnjq4e84GdiykJiY/b7orX28v06MaucU7kgTM6yiWrj2rIqKJA==",
+  "dgSpecHash": "6zc7BdPUiwtDBN0jOLYuya9XesJXHef1h1yFFf1Sxoqo95z8PJfEPS2edHHd0cBpwRvvBBDuALCJTWGEUescWA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Data\\LibrarySystem.Data.csproj",
+  "projectFilePath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Data\\LibrarySystem.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

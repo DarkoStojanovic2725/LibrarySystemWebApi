@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZRekD9mDLPqe5B0EwZiitBGCC+sonXYYQSbkonwfLvGVTtzVopoWTV4G7C/rTgcPheS23kJBIwlkOTY928wIgA==",
+  "dgSpecHash": "I3UN4AcS2L0Az14lAw1PF76M9715AKho7tB8yVqSRFNz0jfYo0tSPZ4uK63YgZvVRnie3IgAKQugSUk/VNGzlA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Service\\LibrarySystem.Service.csproj",
+  "projectFilePath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Service\\LibrarySystem.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.0\\microsoft.entityframeworkcore.5.0.0.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.0\\microsoft.entityframeworkcore.abstractions.5.0.0.nupkg.sha512",
