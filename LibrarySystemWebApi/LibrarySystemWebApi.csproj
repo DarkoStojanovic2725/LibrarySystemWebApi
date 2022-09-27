@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DataSeed\**" />
+    <Content Remove="DataSeed\**" />
+    <EmbeddedResource Remove="DataSeed\**" />
+    <None Remove="DataSeed\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="MediatR" Version="9.0.0" />
@@ -20,10 +27,6 @@
     <ProjectReference Include="..\LibrarySystem.Data\LibrarySystem.Data.csproj" />
     <ProjectReference Include="..\LibrarySystem.Repository\LibrarySystem.Repository.csproj" />
     <ProjectReference Include="..\LibrarySystem.Service\LibrarySystem.Service.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DataSeed\" />
   </ItemGroup>
 
 </Project>
