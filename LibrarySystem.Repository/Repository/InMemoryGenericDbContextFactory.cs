@@ -17,7 +17,9 @@ namespace LibrarySystem.Repository.Repository
         {
             var builder = new DbContextOptionsBuilder<LibrarySystemDbContext>();
             builder.UseInMemoryDatabase(_configuration.GetConnectionString("InMemoryConnection"));
-            return new LibrarySystemDbContext(builder.Options);
+            var context = new LibrarySystemDbContext(builder.Options);
+            context.Database.EnsureCreated();
+            return context;
         }
     }
 }

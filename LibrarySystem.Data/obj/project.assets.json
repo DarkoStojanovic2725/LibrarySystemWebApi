@@ -180,20 +180,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Darko\\.nuget\\packages\\": {}
+    "C:\\Users\\Darko\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Data\\LibrarySystem.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Data\\LibrarySystem.Data.csproj",
       "projectName": "LibrarySystem.Data",
-      "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Data\\LibrarySystem.Data.csproj",
+      "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Data\\LibrarySystem.Data.csproj",
       "packagesPath": "C:\\Users\\Darko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Data\\obj\\",
+      "outputPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Data\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
         "C:\\Users\\Darko\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s/EQsDG+zykTojvzRirApVGJHlyystZ2oScaSAQbsUFj1szbnGTBbHBh5+e6ogM/GwjD3xr29m6CM8+hwovS4w==",
+  "dgSpecHash": "6WzvmOoPmwwVNzK8iVIFFnEGGxJa+Hr/Ec//PQ8Zom4IkcSW+vdhN8JuUqvxozkbaZw+55wdKECLvldHBQ6aUQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.CQRS\\LibrarySystem.CQRS.csproj",
+  "projectFilePath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.CQRS\\LibrarySystem.CQRS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Darko\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

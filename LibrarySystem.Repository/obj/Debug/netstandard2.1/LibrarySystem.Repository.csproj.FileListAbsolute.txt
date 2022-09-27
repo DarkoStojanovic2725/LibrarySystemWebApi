@@ -10,3 +10,15 @@ C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibraryS
 C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystem.Repository\obj\Debug\netstandard2.1\LibrarySystem.Repository.csproj.CopyComplete
 C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystem.Repository\obj\Debug\netstandard2.1\LibrarySystem.Repository.dll
 C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystemWebApi\LibrarySystem.Repository\obj\Debug\netstandard2.1\LibrarySystem.Repository.pdb
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Repository\bin\Debug\netstandard2.1\LibrarySystem.Repository.deps.json
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Repository\bin\Debug\netstandard2.1\LibrarySystem.Repository.dll
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Repository\bin\Debug\netstandard2.1\LibrarySystem.Repository.pdb
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Repository\bin\Debug\netstandard2.1\LibrarySystem.Data.dll
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Repository\bin\Debug\netstandard2.1\LibrarySystem.Data.pdb
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Repository\obj\Debug\netstandard2.1\LibrarySystem.Repository.csprojAssemblyReference.cache
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Repository\obj\Debug\netstandard2.1\LibrarySystem.Repository.AssemblyInfoInputs.cache
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Repository\obj\Debug\netstandard2.1\LibrarySystem.Repository.AssemblyInfo.cs
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Repository\obj\Debug\netstandard2.1\LibrarySystem.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Repository\obj\Debug\netstandard2.1\LibrarySystem.Repository.csproj.CopyComplete
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Repository\obj\Debug\netstandard2.1\LibrarySystem.Repository.dll
+C:\Users\Darko\Documents\GitHub\LibrarySystemWebApi\LibrarySystem.Repository\obj\Debug\netstandard2.1\LibrarySystem.Repository.pdb

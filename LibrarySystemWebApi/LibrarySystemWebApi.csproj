@@ -22,4 +22,8 @@
     <ProjectReference Include="..\LibrarySystem.Service\LibrarySystem.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataSeed\" />
+  </ItemGroup>
+
 </Project>

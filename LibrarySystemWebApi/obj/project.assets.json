@@ -6113,20 +6113,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Darko\\.nuget\\packages\\": {}
+    "C:\\Users\\Darko\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystemWebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystemWebApi.csproj",
       "projectName": "LibrarySystemWebApi",
-      "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystemWebApi.csproj",
+      "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystemWebApi.csproj",
       "packagesPath": "C:\\Users\\Darko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystemWebApi\\obj\\",
+      "outputPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
         "C:\\Users\\Darko\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -6139,17 +6144,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.CQRS\\LibrarySystem.CQRS.csproj": {
-              "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.CQRS\\LibrarySystem.CQRS.csproj"
+            "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.CQRS\\LibrarySystem.CQRS.csproj": {
+              "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.CQRS\\LibrarySystem.CQRS.csproj"
             },
-            "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Data\\LibrarySystem.Data.csproj": {
-              "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Data\\LibrarySystem.Data.csproj"
+            "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Data\\LibrarySystem.Data.csproj": {
+              "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Data\\LibrarySystem.Data.csproj"
             },
-            "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Repository\\LibrarySystem.Repository.csproj": {
-              "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Repository\\LibrarySystem.Repository.csproj"
+            "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Repository\\LibrarySystem.Repository.csproj": {
+              "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Repository\\LibrarySystem.Repository.csproj"
             },
-            "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Service\\LibrarySystem.Service.csproj": {
-              "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Service\\LibrarySystem.Service.csproj"
+            "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Service\\LibrarySystem.Service.csproj": {
+              "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Service\\LibrarySystem.Service.csproj"
             }
           }
         }

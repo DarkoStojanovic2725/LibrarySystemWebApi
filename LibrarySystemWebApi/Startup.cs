@@ -6,9 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using LibrarySystem.Repository.DependencyRegistry;
-using LibrarySystem.Repository.Repository;
 using LibrarySystem.Service.Services;
-using LibrarySystemWebApi.DataSeed;
 using LibrarySystemWebApi.MappingProfiles;
 using LibrarySystemWebApi.Middleware;
 using MediatR;
@@ -35,7 +33,7 @@ namespace LibrarySystemWebApi
             });
 
             services.AddCors();
-
+            
             services.AddMediatR(Assembly.GetExecutingAssembly(), typeof(Startup).Assembly);
             services.AddAutoMapper(typeof(SharedMappingProfile));
 
@@ -47,7 +45,6 @@ namespace LibrarySystemWebApi
             RepositoryDependencies.RegisterDependencies(services);
             services.AddTransient<IAuthorService, AuthorService>();
             services.AddTransient<IBookService, BookService>();
-            services.AddTransient<IDataSeeder, DataSeeder>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,11 +73,6 @@ namespace LibrarySystemWebApi
             {
                 endpoints.MapControllers();
             });
-
-            //Temporary code for inserting initial data
-            var service = app.ApplicationServices.GetService<IDataSeeder>();
-
-            service?.SeedData();
         }
     }
 }

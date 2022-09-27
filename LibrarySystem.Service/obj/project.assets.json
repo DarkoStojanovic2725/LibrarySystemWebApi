@@ -804,20 +804,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Darko\\.nuget\\packages\\": {}
+    "C:\\Users\\Darko\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Service\\LibrarySystem.Service.csproj",
+      "projectUniqueName": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Service\\LibrarySystem.Service.csproj",
       "projectName": "LibrarySystem.Service",
-      "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Service\\LibrarySystem.Service.csproj",
+      "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Service\\LibrarySystem.Service.csproj",
       "packagesPath": "C:\\Users\\Darko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Service\\obj\\",
+      "outputPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Service\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
         "C:\\Users\\Darko\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
@@ -830,8 +835,8 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Repository\\LibrarySystem.Repository.csproj": {
-              "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystemWebApi\\LibrarySystem.Repository\\LibrarySystem.Repository.csproj"
+            "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Repository\\LibrarySystem.Repository.csproj": {
+              "projectPath": "C:\\Users\\Darko\\Documents\\GitHub\\LibrarySystemWebApi\\LibrarySystem.Repository\\LibrarySystem.Repository.csproj"
             }
           }
         }
